@@ -1,6 +1,6 @@
 import { compose, curry, tap } from 'ramda';
 
-// Type definitions (alphabetized)
+// Type definitions
 export interface Action {
   message: string;
   type: string;
@@ -13,10 +13,18 @@ export const dispatch: DispatchAction = action => {
   console.log('Dispatching:', action);
 };
 
-export const createAction = curry((type: NotificationType, message: string): Action => ({ message, type: `NOTIFY_${type.toUpperCase()}` }));
+// Curried function to create an action
+export const createAction = curry((type: NotificationType, message: string): Action => {
+  return {
+    message,
+    type: `NOTIFY_${type.toUpperCase()}`
+  };
+});
 
 // Curried function to dispatch a notification action
-export const dispatchNotification = curry((dispatch: DispatchAction, action: Action): void => dispatch(action));
+export const dispatchNotification = curry((dispatch: DispatchAction, action: Action): void => {
+  return dispatch(action);
+});
 
 // Curried logger function
 export const logNotification = curry((origin: string, type: NotificationType, message: string): void => {
@@ -24,9 +32,9 @@ export const logNotification = curry((origin: string, type: NotificationType, me
 });
 
 // Composed function to notify and dispatch
-export const notifyUser = curry((dispatch: DispatchAction, type: NotificationType, message: string) =>
-  compose(dispatchNotification(dispatch), createAction(type), tap(logNotification(`NotificationSvc-${type}`, type)))(message)
-);
+export const notifyUser = curry((dispatch: DispatchAction, type: NotificationType, message: string) => {
+  return compose(dispatchNotification(dispatch), createAction(type), tap(logNotification(`NotificationSvc-${type}`, type)))(message);
+});
 
 // Preconfigured notification handlers
 export const notify = notifyUser(dispatch);
