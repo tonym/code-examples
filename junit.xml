@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="10" failures="0" errors="0" time="0.979">
+  <testsuite name="Notification Service" errors="0" failures="0" skipped="0" timestamp="2025-03-18T21:01:02" time="0.763" tests="10">
+    <testcase classname="Notification Service createAction should return an action" name="Notification Service createAction should return an action" time="0.001">
+    </testcase>
+    <testcase classname="Notification Service dispatchNotification should dispatch the correct action" name="Notification Service dispatchNotification should dispatch the correct action" time="0">
+    </testcase>
+    <testcase classname="Notification Service logNotification should log the correct message" name="Notification Service logNotification should log the correct message" time="0">
+    </testcase>
+    <testcase classname="Notification Service notifyUser should dispatch and log the message" name="Notification Service notifyUser should dispatch and log the message" time="0">
+    </testcase>
+    <testcase classname="Notification Service notifyUser should log the correct message" name="Notification Service notifyUser should log the correct message" time="0.001">
+    </testcase>
+    <testcase classname="Notification Service notify() should dispatch and log an error" name="Notification Service notify() should dispatch and log an error" time="0">
+    </testcase>
+    <testcase classname="Notification Service error() should dispatch and log an error message" name="Notification Service error() should dispatch and log an error message" time="0">
+    </testcase>
+    <testcase classname="Notification Service info() should dispatch and log an info message" name="Notification Service info() should dispatch and log an info message" time="0">
+    </testcase>
+    <testcase classname="Notification Service success() should dispatch and log a success message" name="Notification Service success() should dispatch and log a success message" time="0">
+    </testcase>
+    <testcase classname="Notification Service warning() should dispatch and log a warning message" name="Notification Service warning() should dispatch and log a warning message" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
